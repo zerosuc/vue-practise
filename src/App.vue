@@ -1,19 +1,10 @@
-<script setup>
-// import Login from '@/views/Login.vue's
-</script>
+<script setup></script>
 
 <template>
-  <!-- <Login /> -->
   <RouterView></RouterView>
 </template>
 
 <style scoped>
-body {
-  margin: 0;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f0f2f5;
-}
-
 #app {
   display: flex;
   justify-content: center;

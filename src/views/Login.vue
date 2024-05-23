@@ -22,11 +22,15 @@
         </el-form-item>
       </el-form>
     </el-card>
+    <!-- 版权说明 -->
+    <div class="copyright">© 2024 Your Company. All rights reserved.</div>
   </div>
 </template>
 
 <script setup>
 import { reactive, ref } from 'vue'
+// import { router } from  'vue-router'
+import router from '@/router/index'
 import { ElMessage } from 'element-plus'
 import { User, Lock } from '@element-plus/icons-vue'
 
@@ -50,6 +54,7 @@ const handleLogin = () => {
         message: '登录成功',
         type: 'success'
       })
+      router.push('/dashboard')
       // 执行登录操作
     } else {
       ElMessage({
@@ -69,7 +74,6 @@ const handleLogin = () => {
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #f0f2f5;
 }
 
 .login-card {
@@ -91,5 +95,14 @@ const handleLogin = () => {
   width: 100%;
   height: 40px;
   font-size: 16px;
+}
+
+/* 版权说明样式 */
+/* 样式类名应与模板中一致 */
+.copyright {
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
+  font-size: 12px;
 }
 </style>
