@@ -22,6 +22,13 @@ const router = createRouter({
         { path: '', component: Dashboard }
         // 其他路由配置
       ]
+    },
+    {
+      path: '/:catchAll(.*)',
+      meta: {
+        closeTab: true
+      },
+      component: () => import('@/views/error/index.vue') // 404
     }
   ]
 })
