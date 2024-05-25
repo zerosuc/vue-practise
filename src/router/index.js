@@ -3,12 +3,19 @@ import Login from '@/views/Login.vue'
 
 import MainLayout from '@/views/MainLayout.vue'
 import Dashboard from '@/views/Dashboard.vue'
+import Basic from '@/views/basic.vue'
+import Container from '@/views/container.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
+      name: 'home',
+      redirect: 'login'
+    },
+    {
+      path: '/login',
       name: 'login',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
@@ -16,10 +23,22 @@ const router = createRouter({
       component: Login
     },
     {
+      path: '/container',
+      component: Container
+    },
+    {
+      path: '/basic',
+      component: MainLayout,
+      children: [
+        { path: '', component: Basic }
+        // 其他路由配置
+      ]
+    },
+    {
       path: '/dashboard',
       component: MainLayout,
       children: [
-        { path: '', component: Dashboard }
+        { path: '/', component: Dashboard }
         // 其他路由配置
       ]
     },
