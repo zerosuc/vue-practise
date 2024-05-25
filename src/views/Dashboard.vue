@@ -5,6 +5,7 @@
       <p>欢迎使用中星微云管平台！</p>
     </el-card>
   </div>
+  <!-- <router-view></router-view> -->
 </template>
 
 <script setup></script>

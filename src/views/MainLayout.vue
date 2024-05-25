@@ -3,7 +3,10 @@
     <!-- 顶部导航栏 -->
     <el-header class="header">
       <div class="header-content">
-        <el-icon><Menu /></el-icon>
+        <div class="icon-with-text">
+          <el-icon size="30"><Menu /></el-icon>
+          <span class="icon-text">Kubernetes</span>
+        </div>
         <span class="title">中星微云管平台</span>
         <el-dropdown>
           <span class="el-dropdown-link">
@@ -31,9 +34,10 @@
               </div>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/basic">仪表盘</el-menu-item>
-              <el-menu-item index="/login">节点管理</el-menu-item>
-              <el-menu-item index="/container">容器管理</el-menu-item>
+              <el-menu-item index="/dashboard/main">仪表盘</el-menu-item>
+              <el-menu-item index="/dashboard/basic">basic</el-menu-item>
+              <el-menu-item index="/dashboard/container">容器管理</el-menu-item>
+              <el-menu-item index="/login">登录</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
           <el-sub-menu index="2">
@@ -44,16 +48,16 @@
               </div>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/basic/form">表单</el-menu-item>
-              <el-menu-item index="/basic/form2">访问日志</el-menu-item>
-              <el-menu-item index="/basic/form">11111</el-menu-item>
-              <el-menu-item index="/basic/form2">2222</el-menu-item>
+              <el-menu-item index="/dashboard/form">表单</el-menu-item>
+              <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
+              <el-menu-item index="/container">非子container</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
         </el-menu>
       </el-aside>
 
       <el-main>
+        <!-- 这里是 布局路由的子路由 一般只有子路由和app.vue这样的地方才有 -->
         <router-view />
       </el-main>
     </el-container>
@@ -134,5 +138,16 @@ const defaultOpeneds = ref(['1', '2'])
 .el-submenu__title {
   line-height: 36px !important;
   height: 36px !important;
+}
+
+/** header menu */
+.icon-with-text {
+  display: flex;
+  align-items: center;
+}
+
+.icon-text {
+  margin-left: 5px; /* 根据需要调整 */
+  font-size: 14px; /* 根据需要调整 */
 }
 </style>

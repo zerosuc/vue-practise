@@ -22,6 +22,7 @@
       <el-button @click="resetForm(ruleFormRef)">Reset</el-button>
     </el-form-item>
   </el-form>
+  <!-- <router-view></router-view> -->
 </template>
 
 <script setup>

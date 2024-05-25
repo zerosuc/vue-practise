@@ -19,9 +19,6 @@ const router = createRouter({
     {
       path: '/login',
       name: 'login',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: Login
     },
     {
@@ -29,20 +26,14 @@ const router = createRouter({
       component: Container
     },
     {
-      path: '/basic',
-      component: MainLayout,
-      children: [
-        { path: '', component: Basic },
-        { path: 'form', component: Form },
-        { path: 'form2', component: Form2 }
-        // 其他路由配置
-      ]
-    },
-    {
       path: '/dashboard',
       component: MainLayout,
       children: [
-        { path: '/', component: Dashboard }
+        { path: 'main', component: Dashboard },
+        { path: 'basic', component: Basic },
+        { path: 'form', component: Form },
+        { path: 'form2', component: Form2 },
+        { path: 'container', component: Container }
         // 其他路由配置
       ]
     },
