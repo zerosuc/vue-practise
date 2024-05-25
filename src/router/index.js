@@ -5,6 +5,8 @@ import MainLayout from '@/views/MainLayout.vue'
 import Dashboard from '@/views/Dashboard.vue'
 import Basic from '@/views/basic.vue'
 import Container from '@/views/container.vue'
+import Form from '@/views/form.vue'
+import Form2 from '@/views/form2.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,7 +32,9 @@ const router = createRouter({
       path: '/basic',
       component: MainLayout,
       children: [
-        { path: '', component: Basic }
+        { path: '', component: Basic },
+        { path: 'form', component: Form },
+        { path: 'form2', component: Form2 }
         // 其他路由配置
       ]
     },

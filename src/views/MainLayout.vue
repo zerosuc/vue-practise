@@ -44,8 +44,10 @@
               </div>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="2-1">系统日志</el-menu-item>
-              <el-menu-item index="2-2">访问日志</el-menu-item>
+              <el-menu-item index="/basic/form">表单</el-menu-item>
+              <el-menu-item index="/basic/form2">访问日志</el-menu-item>
+              <el-menu-item index="/basic/form">11111</el-menu-item>
+              <el-menu-item index="/basic/form2">2222</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
         </el-menu>

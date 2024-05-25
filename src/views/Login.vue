@@ -3,6 +3,7 @@
     <el-card class="login-card" shadow="hover">
       <h2 class="login-title">中星微云管平台</h2>
       <el-form :model="loginForm" :rules="rules" ref="loginFormRef" label-width="0">
+        <!-- <el-form-item label="用户名" prop="username"> -->
         <el-form-item prop="username">
           <el-input v-model="loginForm.username" placeholder="Username">
             <template #prefix>
@@ -37,12 +38,18 @@ import { User, Lock } from '@element-plus/icons-vue'
 // 定义带有默认值的表单对象
 const loginForm = reactive({
   username: 'abcde',
-  password: '2222'
+  password: '222233'
 })
 
 const rules = {
-  username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-  password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+  username: [
+    { required: true, message: '请输入用户名', trigger: 'blur' },
+    { min: 3, max: 15, message: '用户名长度在 3 到 15 个字符', trigger: 'blur' }
+  ],
+  password: [
+    { required: true, message: '请输入密码', trigger: 'blur' },
+    { min: 6, max: 20, message: '密码长度在 6 到 20 个字符', trigger: 'blur' }
+  ]
 }
 
 const loginFormRef = ref(null)
@@ -76,6 +83,9 @@ const handleLogin = () => {
   width: 100%;
   height: 100vh;
 }
+/* .el-input {
+  width: 150px;
+} */
 
 .login-card {
   width: 400px;
