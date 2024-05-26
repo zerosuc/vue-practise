@@ -12,14 +12,14 @@
           </div>
         </el-affix>
         <span class="title">中星微云管平台</span>
-        <el-dropdown>
+        <el-dropdown @command="handelCommand">
           <span class="el-dropdown-link">
             管理员<i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <template #dropdown>
             <el-dropdown-menu>
-              <el-dropdown-item>个人信息</el-dropdown-item>
-              <el-dropdown-item>退出</el-dropdown-item>
+              <el-dropdown-item command="info">个人信息</el-dropdown-item>
+              <el-dropdown-item command="logout">退出</el-dropdown-item>
             </el-dropdown-menu>
           </template>
         </el-dropdown>
@@ -133,8 +133,27 @@
 <script setup>
 import { ref } from 'vue'
 import { Setting, Document, Place } from '@element-plus/icons-vue'
+import router from '@/router'
 
 const defaultOpeneds = ref(['1', '2', '3', '4', '5'])
+
+// 处理命令回调
+const handelCommand = (command) => {
+  switch (command) {
+    case 'info':
+      console.log(command)
+      // info();
+      break
+    case 'logout':
+      HandleLogout()
+      break
+  }
+}
+
+const HandleLogout = () => {
+  console.log('exit')
+  router.push('/login')
+}
 </script>
 
 <style scoped>
