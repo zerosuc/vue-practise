@@ -3,10 +3,16 @@
     <!-- 顶部导航栏 -->
     <el-header class="header">
       <div class="header-content">
-        <div class="icon-with-text">
-          <el-icon size="30"><Menu /></el-icon>
-          <span class="icon-text">Kubernetes</span>
-        </div>
+        <el-affix :offset="10">
+          <div class="icon-with-text">
+            <!-- <el-icon size="30"><Menu /></el-icon> -->
+            <svg class="icon" aria-hidden="true" width="20" height="20">
+              <use xlink:href="#icon-k8s"></use>
+            </svg>
+            <span class="icon-text">Kubernetes</span>
+          </div>
+        </el-affix>
+
         <span class="title">中星微云管平台</span>
         <el-dropdown>
           <span class="el-dropdown-link">
@@ -41,6 +47,45 @@
             </el-menu-item-group>
           </el-sub-menu>
           <el-sub-menu index="2">
+            <template #title>
+              <div class="menu-item">
+                <el-icon><Document /></el-icon>
+                <span>日志</span>
+              </div>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="/dashboard/form">表单</el-menu-item>
+              <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
+              <el-menu-item index="/container">非子container</el-menu-item>
+            </el-menu-item-group>
+          </el-sub-menu>
+          <el-sub-menu index="3">
+            <template #title>
+              <div class="menu-item">
+                <el-icon><Document /></el-icon>
+                <span>日志</span>
+              </div>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="/dashboard/form">表单</el-menu-item>
+              <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
+              <el-menu-item index="/container">非子container</el-menu-item>
+            </el-menu-item-group>
+          </el-sub-menu>
+          <el-sub-menu index="4">
+            <template #title>
+              <div class="menu-item">
+                <el-icon><Document /></el-icon>
+                <span>日志</span>
+              </div>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="/dashboard/form">表单</el-menu-item>
+              <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
+              <el-menu-item index="/container">非子container</el-menu-item>
+            </el-menu-item-group>
+          </el-sub-menu>
+          <el-sub-menu index="5">
             <template #title>
               <div class="menu-item">
                 <el-icon><Document /></el-icon>
@@ -148,6 +193,10 @@ const defaultOpeneds = ref(['1', '2'])
 
 .icon-text {
   margin-left: 5px; /* 根据需要调整 */
-  font-size: 14px; /* 根据需要调整 */
+  font-size: 20px; /* 根据需要调整 */
+}
+.icon {
+  width: 30px;
+  height: 40px;
 }
 </style>

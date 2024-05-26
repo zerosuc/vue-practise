@@ -3,6 +3,8 @@ import { createPinia } from 'pinia'
 import 'element-plus/dist/index.css'
 import ElementPlus from 'element-plus'
 // import './assets/index.css'
+import './icon/icon.css'
+import './icon/iconfont.js'
 
 import App from './App.vue'
 import router from './router'
