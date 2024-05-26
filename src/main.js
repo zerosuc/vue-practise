@@ -5,6 +5,7 @@ import ElementPlus from 'element-plus'
 // import './assets/index.css'
 import './icon/icon.css'
 import './icon/iconfont.js'
+// import '@/router/permission.js'
 
 import App from './App.vue'
 import router from './router'
