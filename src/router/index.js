@@ -22,10 +22,6 @@ const router = createRouter({
       component: Login
     },
     {
-      path: '/container',
-      component: Container
-    },
-    {
       path: '/dashboard',
       component: MainLayout,
       children: [

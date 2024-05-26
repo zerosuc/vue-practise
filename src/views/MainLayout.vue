@@ -5,14 +5,12 @@
       <div class="header-content">
         <el-affix :offset="10">
           <div class="icon-with-text">
-            <!-- <el-icon size="30"><Menu /></el-icon> -->
             <svg class="icon" aria-hidden="true" width="20" height="20">
               <use xlink:href="#icon-k8s"></use>
             </svg>
             <span class="icon-text">Kubernetes</span>
           </div>
         </el-affix>
-
         <span class="title">中星微云管平台</span>
         <el-dropdown>
           <span class="el-dropdown-link">
@@ -30,8 +28,9 @@
 
     <!-- 侧边栏和内容区域 -->
     <el-container>
-      <el-aside width="200px">
+      <el-aside width="200px" class="aside">
         <el-menu :default-openeds="defaultOpeneds" class="el-menu-vertical-demo" router>
+          <el-menu-item index="/dashboard">仪表盘</el-menu-item>
           <el-sub-menu index="1">
             <template #title>
               <div class="menu-item">
@@ -40,13 +39,25 @@
               </div>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/dashboard">仪表盘</el-menu-item>
               <el-menu-item index="/dashboard/basic">basic</el-menu-item>
               <el-menu-item index="/dashboard/container">容器管理</el-menu-item>
               <el-menu-item index="/login">登录</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
           <el-sub-menu index="2">
+            <template #title>
+              <div class="menu-item">
+                <el-icon><Document /></el-icon>
+                <span>日志</span>
+              </div>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="/dashboard/form">表单</el-menu-item>
+              <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
+              <el-menu-item index="/container">非子container</el-menu-item>
+            </el-menu-item-group>
+          </el-sub-menu>
+          <el-sub-menu index="5">
             <template #title>
               <div class="menu-item">
                 <el-icon><Document /></el-icon>
@@ -85,35 +96,45 @@
               <el-menu-item index="/container">非子container</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
-          <el-sub-menu index="5">
-            <template #title>
-              <div class="menu-item">
-                <el-icon><Document /></el-icon>
-                <span>日志</span>
-              </div>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/dashboard/form">表单</el-menu-item>
-              <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
-              <el-menu-item index="/container">非子container</el-menu-item>
-            </el-menu-item-group>
-          </el-sub-menu>
+          <!-- 其他子菜单 -->
         </el-menu>
       </el-aside>
 
-      <el-main>
-        <!-- 这里是 布局路由的子路由 一般只有子路由和app.vue这样的地方才有 -->
-        <router-view />
-      </el-main>
+      <el-container>
+        <el-main class="main">
+          <router-view />
+        </el-main>
+        <el-footer class="footer">
+          <el-icon style="width: 2em; top: 3px; font-size: 18px"><Place /></el-icon>
+          <a class="footer el-icon-place">devops platform</a>
+        </el-footer>
+        <!-- <el-backtop target=".el-main" :right="100" :bottom="100" /> -->
+        <el-backtop :right="100" :bottom="100" />
+        <el-backtop :bottom="100">
+          <div
+            style="
+              height: 100%;
+              width: 100%;
+              background-color: var(--el-bg-color-overlay);
+              box-shadow: var(--el-box-shadow-lighter);
+              text-align: center;
+              line-height: 40px;
+              color: #1989fa;
+            "
+          >
+            UP
+          </div>
+        </el-backtop>
+      </el-container>
     </el-container>
   </el-container>
 </template>
 
 <script setup>
 import { ref } from 'vue'
-import { Setting, Document } from '@element-plus/icons-vue'
+import { Setting, Document, Place } from '@element-plus/icons-vue'
 
-const defaultOpeneds = ref(['1', '2'])
+const defaultOpeneds = ref(['1', '2', '3', '4', '5'])
 </script>
 
 <style scoped>
@@ -122,6 +143,8 @@ const defaultOpeneds = ref(['1', '2'])
   align-items: center;
   padding: 0 20px;
   height: 60px;
+  background-color: #303133;
+  color: #ffffff;
 }
 
 .header-content {
@@ -145,14 +168,6 @@ const defaultOpeneds = ref(['1', '2'])
 .el-icon {
   font-size: 24px;
   margin-right: 10px;
-}
-
-.el-dropdown-menu {
-  min-width: 160px;
-}
-
-.el-dropdown-item {
-  white-space: nowrap;
 }
 
 .el-menu {
@@ -185,18 +200,47 @@ const defaultOpeneds = ref(['1', '2'])
   height: 36px !important;
 }
 
-/** header menu */
 .icon-with-text {
   display: flex;
   align-items: center;
 }
 
 .icon-text {
-  margin-left: 5px; /* 根据需要调整 */
-  font-size: 20px; /* 根据需要调整 */
+  margin-left: 5px;
+  font-size: 20px;
 }
+
 .icon {
   width: 50px;
   height: 50px;
+}
+
+.aside {
+  transition: all;
+  background-color: #131b27;
+  overflow-y: auto;
+}
+
+.aside::-webkit-scrollbar {
+  display: none;
+}
+
+.aside {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.main {
+  padding: 10px;
+  overflow-y: auto;
+  /* height: calc(100vh - 120px); */
+}
+
+.footer {
+  z-index: 1200;
+  color: rgb(187, 184, 184);
+  font-size: 14px;
+  text-align: center;
+  line-height: 60px;
 }
 </style>
