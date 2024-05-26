@@ -29,7 +29,8 @@ const router = createRouter({
       path: '/dashboard',
       component: MainLayout,
       children: [
-        { path: 'main', component: Dashboard },
+        // path 为空 才是默认页；填写其他均有问题
+        { path: '', component: Dashboard },
         { path: 'basic', component: Basic },
         { path: 'form', component: Form },
         { path: 'form2', component: Form2 },

@@ -40,7 +40,7 @@
               </div>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/dashboard/main">仪表盘</el-menu-item>
+              <el-menu-item index="/dashboard">仪表盘</el-menu-item>
               <el-menu-item index="/dashboard/basic">basic</el-menu-item>
               <el-menu-item index="/dashboard/container">容器管理</el-menu-item>
               <el-menu-item index="/login">登录</el-menu-item>
@@ -111,7 +111,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Menu, Setting, Document } from '@element-plus/icons-vue'
+import { Setting, Document } from '@element-plus/icons-vue'
 
 const defaultOpeneds = ref(['1', '2'])
 </script>
@@ -196,7 +196,7 @@ const defaultOpeneds = ref(['1', '2'])
   font-size: 20px; /* 根据需要调整 */
 }
 .icon {
-  width: 30px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
 }
 </style>
