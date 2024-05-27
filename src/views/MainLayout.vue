@@ -65,7 +65,7 @@
               </div>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/dashboard/form">表单</el-menu-item>
+              <el-menu-item index="/dashboard/deploy">deploy</el-menu-item>
               <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
               <el-menu-item index="/container">非子container</el-menu-item>
             </el-menu-item-group>

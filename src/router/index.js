@@ -7,13 +7,15 @@ import Basic from '@/views/basic.vue'
 import Container from '@/views/container.vue'
 import Form from '@/views/form.vue'
 import Form2 from '@/views/form2.vue'
+import Deploy from '@/views/deploy/deploy.vue'
 
 const asyncRoutes = [
   { path: '', component: Dashboard },
   { path: 'basic', component: Basic },
   { path: 'form', component: Form },
   { path: 'form2', component: Form2 },
-  { path: 'container', component: Container }
+  { path: 'container', component: Container },
+  { path: 'deploy', component: Deploy }
 ]
 
 const router = createRouter({
@@ -75,5 +77,5 @@ export function addRouters(menus) {
 }
 
 // addRouters()
-export { router }
+// export { router }
 export default router
