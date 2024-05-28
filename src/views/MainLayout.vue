@@ -87,13 +87,13 @@
             <template #title>
               <div class="menu-item">
                 <el-icon><Document /></el-icon>
-                <span>日志</span>
+                <span>elemPluse基本组件</span>
               </div>
             </template>
             <el-menu-item-group>
-              <el-menu-item index="/dashboard/form">表单</el-menu-item>
-              <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
-              <el-menu-item index="/container">非子container</el-menu-item>
+              <el-menu-item index="/dashboard/basic1">基本组件</el-menu-item>
+              <el-menu-item index="/dashboard/nav">导航相关</el-menu-item>
+              <el-menu-item index="/dashboard/basic3">基本3</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
           <!-- 其他子菜单 -->
