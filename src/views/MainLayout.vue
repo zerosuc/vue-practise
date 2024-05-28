@@ -66,7 +66,7 @@
             </template>
             <el-menu-item-group>
               <el-menu-item index="/dashboard/form">表单</el-menu-item>
-              <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
+              <el-menu-item index="/dashboard/dialog">对话框</el-menu-item>
               <el-menu-item index="/dashboard/date">日期时间</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
@@ -80,7 +80,7 @@
             <el-menu-item-group>
               <el-menu-item index="/dashboard/basic1">基本组件</el-menu-item>
               <el-menu-item index="/dashboard/nav">导航相关</el-menu-item>
-              <el-menu-item index="/dashboard/tab">tab</el-menu-item>
+              <el-menu-item index="/dashboard/tab">tab|分页</el-menu-item>
               <el-menu-item index="/dashboard/form-vip">表单</el-menu-item>
               <el-menu-item index="/dashboard/table">表格</el-menu-item>
             </el-menu-item-group>
