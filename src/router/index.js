@@ -13,6 +13,7 @@ import Nav from '@/views/elm/nav.vue'
 import Tab1 from '@/views/elm/tab.vue'
 import Form3 from '@/views/elm/form.vue'
 import Table from '@/views/elm/table.vue'
+import Time from '@/views/elm/date.vue'
 
 const asyncRoutes = [
   { path: '', component: Dashboard },
@@ -25,7 +26,8 @@ const asyncRoutes = [
   { path: 'nav', component: Nav },
   { path: 'tab', component: Tab1 },
   { path: 'form-vip', component: Form3 },
-  { path: 'table', component: Table }
+  { path: 'table', component: Table },
+  { path: 'date', component: Time }
 ]
 
 const router = createRouter({

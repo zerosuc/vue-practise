@@ -67,7 +67,7 @@
             <el-menu-item-group>
               <el-menu-item index="/dashboard/form">表单</el-menu-item>
               <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
-              <el-menu-item index="/container">非子container</el-menu-item>
+              <el-menu-item index="/dashboard/date">日期时间</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
           <el-sub-menu index="4">
