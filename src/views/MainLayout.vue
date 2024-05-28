@@ -28,7 +28,7 @@
 
     <!-- 侧边栏和内容区域 -->
     <el-container>
-      <el-aside width="200px" class="aside" style="background-color: #303133">
+      <el-aside width="200px" class="aside" style="background-color: #303133 !important">
         <el-menu :default-openeds="defaultOpeneds" class="el-menu-vertical-demo" router>
           <el-menu-item index="/dashboard">仪表盘</el-menu-item>
           <el-sub-menu index="1">
