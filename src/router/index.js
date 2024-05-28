@@ -10,6 +10,9 @@ import Form2 from '@/views/form2.vue'
 import Deploy from '@/views/deploy/deploy.vue'
 import basic1 from '@/views/elm/basic.vue'
 import Nav from '@/views/elm/nav.vue'
+import Tab1 from '@/views/elm/tab.vue'
+import Form3 from '@/views/elm/form.vue'
+import Table from '@/views/elm/table.vue'
 
 const asyncRoutes = [
   { path: '', component: Dashboard },
@@ -19,7 +22,10 @@ const asyncRoutes = [
   { path: 'container', component: Container },
   { path: 'deploy', component: Deploy },
   { path: 'basic1', component: basic1 },
-  { path: 'nav', component: Nav }
+  { path: 'nav', component: Nav },
+  { path: 'tab', component: Tab1 },
+  { path: 'form-vip', component: Form3 },
+  { path: 'table', component: Table }
 ]
 
 const router = createRouter({

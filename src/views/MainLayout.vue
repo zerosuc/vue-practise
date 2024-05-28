@@ -28,7 +28,7 @@
 
     <!-- 侧边栏和内容区域 -->
     <el-container>
-      <el-aside width="200px" class="aside">
+      <el-aside width="200px" class="aside" style="background-color: #303133">
         <el-menu :default-openeds="defaultOpeneds" class="el-menu-vertical-demo" router>
           <el-menu-item index="/dashboard">仪表盘</el-menu-item>
           <el-sub-menu index="1">
@@ -42,19 +42,6 @@
               <el-menu-item index="/dashboard/basic">basic</el-menu-item>
               <el-menu-item index="/dashboard/container">容器管理</el-menu-item>
               <el-menu-item index="/login">登录</el-menu-item>
-            </el-menu-item-group>
-          </el-sub-menu>
-          <el-sub-menu index="2">
-            <template #title>
-              <div class="menu-item">
-                <el-icon><Document /></el-icon>
-                <span>日志</span>
-              </div>
-            </template>
-            <el-menu-item-group>
-              <el-menu-item index="/dashboard/form">表单</el-menu-item>
-              <el-menu-item index="/dashboard/form2">访问日志</el-menu-item>
-              <el-menu-item index="/container">非子container</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
           <el-sub-menu index="5">
@@ -87,13 +74,15 @@
             <template #title>
               <div class="menu-item">
                 <el-icon><Document /></el-icon>
-                <span>elemPluse基本组件</span>
+                <span>elemPlus组件</span>
               </div>
             </template>
             <el-menu-item-group>
               <el-menu-item index="/dashboard/basic1">基本组件</el-menu-item>
               <el-menu-item index="/dashboard/nav">导航相关</el-menu-item>
-              <el-menu-item index="/dashboard/basic3">基本3</el-menu-item>
+              <el-menu-item index="/dashboard/tab">tab</el-menu-item>
+              <el-menu-item index="/dashboard/form-vip">表单</el-menu-item>
+              <el-menu-item index="/dashboard/table">表格</el-menu-item>
             </el-menu-item-group>
           </el-sub-menu>
           <!-- 其他子菜单 -->
@@ -191,7 +180,7 @@ const HandleLogout = () => {
 
 .el-menu {
   height: 100%;
-  border-right: 1px solid #ebeef5;
+  /* border-right: 1px solid #ebeef5; */
 }
 
 .menu-item {
@@ -236,7 +225,8 @@ const HandleLogout = () => {
 
 .aside {
   transition: all;
-  background-color: #131b27;
+  /* background-color: #131b27; */
+  background-color: #303133;
   overflow-y: auto;
 }
 
