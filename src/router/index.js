@@ -53,10 +53,7 @@ const router = createRouter({
       // // path 为空 才是默认页；填写其他均有问题
       // { path: '', component: Dashboard },
       // { path: 'basic', component: Basic },
-      // { path: 'form', component: Form },
-      // { path: 'form2', component: Form2 },
-      // { path: 'container', component: Container }
-      // 其他路由配置
+      // { path: 'form', component: Form }
       // ]
     },
     {

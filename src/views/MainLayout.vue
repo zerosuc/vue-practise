@@ -123,6 +123,7 @@
 import { ref } from 'vue'
 import { Setting, Document, Place } from '@element-plus/icons-vue'
 import router from '@/router'
+import { useAdminStore } from '@/stores/admin.js'
 
 const defaultOpeneds = ref(['1', '2', '3', '4', '5'])
 
@@ -141,6 +142,8 @@ const handelCommand = (command) => {
 
 const HandleLogout = () => {
   console.log('exit')
+  const userData = useAdminStore()
+  userData.remove()
   router.push('/login')
 }
 </script>

@@ -19,6 +19,7 @@
     "json2yaml": "^1.1.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
     "universal-cookie": "^7.1.4",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

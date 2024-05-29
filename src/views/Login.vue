@@ -34,6 +34,8 @@ import { reactive, ref } from 'vue'
 import router from '@/router/index'
 import { ElMessage } from 'element-plus'
 import { User, Lock } from '@element-plus/icons-vue'
+import { useAdminStore } from '@/stores/admin.js'
+import { formatDate } from '@/utils/time.js'
 
 // 定义带有默认值的表单对象
 const loginForm = reactive({
@@ -61,6 +63,8 @@ const handleLogin = () => {
         message: '登录成功',
         type: 'success'
       })
+      const userData = useAdminStore()
+      userData.save(loginForm.username, loginForm.username, formatDate(new Date()))
       router.push('/dashboard')
       // 执行登录操作
     } else {
